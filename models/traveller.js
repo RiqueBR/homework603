@@ -1,5 +1,3 @@
-const
-
 const Traveller = function(journeys) {
   this.journeys = journeys;
 };
@@ -19,7 +17,7 @@ Traveller.prototype.getJourneyEndLocations = function () {
   return result;
 };
 
-Traveller.prototype.getModesOfTransport = function (transport) {
+Traveller.prototype.getModesOfTransport = function () {
   // I'm using .map beacause I want to return a NEW array with the elements I'd like to pull.
   return this.journeys.map((journey) => {
     return journey.transport;
@@ -45,7 +43,14 @@ Traveller.prototype.calculateTotalDistanceTravelled = function () {
 };
 
 Traveller.prototype.getUniqueModesOfTransport = function () {
+// find an array of transports
+this.journeys.getModesOfTransport( () => {
+  // loop over the unique elements
+  let find_unique = new Set(this.journeys.getModesOfTransport())
+})
 
+// return array with unique elements
+return find_unique;
 };
 
 
